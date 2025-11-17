@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Check if Telegram WebApp API is available
   if (window.Telegram?.WebApp) {
     const tg = window.Telegram.WebApp;
-
+	document.getElementById("Send").addEventListener("click", SendResult, false);
     // Check API version support
     if (!tg.isVersionAtLeast("8.0")) {
       console.error("Home Screen Shortcut API is not supported on this device.");
@@ -85,4 +85,18 @@ function parseTelegramInitData(initData) {
   });
 
   return parsedData;
+}
+
+function SendResult() {
+	console.log ("sending result");
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "https://telegramwebglbackend-production.up.railway.app/api/score", true);
+	var telegramId = tg.initData.user.id;
+	var score = 0;
+	xhr.setRequestHeader('Content-Type', 'application/json');
+	xhr.send(JSON.stringify({
+    "telegramId": telegramId,
+	"score": score,
+}));
+	
 }

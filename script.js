@@ -92,7 +92,7 @@ function SendResult() {
 	const tg = window.Telegram.WebApp;
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://telegramwebglbackend-production.up.railway.app/api/score", true);
-	var telegramId = tg.initData.user.id;
+	var telegramId = tg.initDataUnsafe.user.id;
 	var score = 0;
 	xhr.setRequestHeader('Content-Type', 'application/json');
 	xhr.send(JSON.stringify({

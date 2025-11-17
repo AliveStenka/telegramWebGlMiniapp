@@ -95,7 +95,7 @@ async function SendResult() {
 	var telegram_id = tg.initDataUnsafe.user.id;
 	var score = 0;
 	
-	const formData = new FormData(form); // Creates a FormData object from the form
+	const formData = new FormData();
 	formData.append("telegram_id", telegram_id);
 	formData.append("score", score);
 

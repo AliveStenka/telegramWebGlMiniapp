@@ -13,11 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Check API version support
     if (!tg.isVersionAtLeast("8.0")) {
-      versionSupportElement.textContent = "Home Screen Shortcut API is not supported on this device.";
+      console.log = "Home Screen Shortcut API is not supported on this device.";
       console.error("Home Screen Shortcut API is not supported on this device.");
       return;
     } else {
-      versionSupportElement.textContent = "Home Screen Shortcut API is supported!";
+      console.log = "Home Screen Shortcut API is supported!";
     }
 
     // Mark the Mini App as ready
@@ -29,11 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get the start_param from Telegram WebApp
     const startParam = tg.initDataUnsafe?.start_param || "No start_param available";
-    startAppElement.textContent = startParam;
+    console.log = (startParam);
 
     // Get and parse the initialization data provided by Telegram
     const initData = tg.initData || "No Telegram Data available";
-    telegramDataElement.textContent = JSON.stringify(parseTelegramInitData(initData), null, 2);
+    console.log (JSON.stringify(parseTelegramInitData(initData), null, 2));
 
     // Check the home screen status using a callback
     tg.checkHomeScreenStatus((status) => {

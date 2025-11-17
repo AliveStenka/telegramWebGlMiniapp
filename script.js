@@ -87,7 +87,7 @@ function parseTelegramInitData(initData) {
   return parsedData;
 }
 
-function SendResult() {
+async function SendResult() {
 	console.log ("sending result");
 	const tg = window.Telegram.WebApp;
 	var xhr = new XMLHttpRequest();

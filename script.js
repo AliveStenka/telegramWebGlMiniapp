@@ -90,8 +90,6 @@ function parseTelegramInitData(initData) {
 async function SendResult() {
 	console.log ("sending result");
 	const tg = window.Telegram.WebApp;
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "https://telegramwebglbackend-production.up.railway.app/api/score", true);
 	var telegram_id = tg.initDataUnsafe.user.id;
 	var score = 0;
 	

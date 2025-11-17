@@ -87,8 +87,24 @@ function parseTelegramInitData(initData) {
   return parsedData;
 }
 
-function SendResult() {
-	console.log ("no");
-}
+function SendResult() 
+{
+	console.log ("sending result");
+	const formData = new FormData();
+	const tg = window.Telegram.WebApp;
+	
+	var telegram_id = tg.initDataUnsafe.user.id;
+	formData.append("telegram_id", telegram_id);
+	formData.append("score", score);
+	
+	try {
+    const response = await fetch("https://telegramwebglbackend-production.up.railway.app/api/score", {
+      method: "POST",
+      body: formData,
+    });
+    console.log(await response.json());
+	} catch (e) {
+		console.error(e);
+	}
 	
 }

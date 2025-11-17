@@ -95,5 +95,23 @@ function SendResult() {
 	var telegram_id = tg.initDataUnsafe.user.id;
 	var score = 0;
 	
-	
+	const formData = new FormData(form); // Creates a FormData object from the form
+	formData.append("telegram_id", telegram_id);
+	formData.append("score", score);
+
+    try {
+        const response = await fetch('https://telegramwebglbackend-production.up.railway.app/api/score', { 
+            method: 'POST',
+            body: formData, 
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json(); // Or response.text() depending on server response
+        console.log('Success:', result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }

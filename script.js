@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     // Handle case where Telegram WebApp API is not available
-    telegramDataElement.textContent = "Telegram WebApp is not available.";
+    console.log("Telegram WebApp is not available.");
   }
 });
 

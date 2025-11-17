@@ -94,10 +94,6 @@ function SendResult() {
 	xhr.open("POST", "https://telegramwebglbackend-production.up.railway.app/api/score", true);
 	var telegram_id = tg.initDataUnsafe.user.id;
 	var score = 0;
-	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send(JSON.stringify({
-    "telegram_id": telegram_id,
-	"score": score,
-}));
+	
 	
 }

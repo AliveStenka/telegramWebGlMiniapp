@@ -89,6 +89,7 @@ function parseTelegramInitData(initData) {
 
 function SendResult() {
 	console.log ("sending result");
+	const tg = window.Telegram.WebApp;
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", "https://telegramwebglbackend-production.up.railway.app/api/score", true);
 	var telegramId = tg.initData.user.id;

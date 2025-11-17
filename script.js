@@ -1,12 +1,12 @@
 // Wait for the DOM to fully load before executing the script
-console.log("script started");
+console.log("script started")
 document.addEventListener("DOMContentLoaded", () => {
   // Get references to DOM elements where data will be displayed
   const startAppElement = document.getElementById("startapp-param");
   const telegramDataElement = document.getElementById("telegram-data");
   const versionSupportElement = document.getElementById("version-support-status");
   const statusElement = document.getElementById("home-screen-status");
-  console.log("script loaded");
+  console.log("script loaded")
   // Check if Telegram WebApp API is available
   if (window.Telegram?.WebApp) {
     const tg = window.Telegram.WebApp;

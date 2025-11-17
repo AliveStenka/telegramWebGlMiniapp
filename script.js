@@ -87,8 +87,7 @@ function parseTelegramInitData(initData) {
   return parsedData;
 }
 
-function SendResult() 
-{
+function SendResult() {
 	console.log ("sending result");
 	const formData = new FormData();
 	const tg = window.Telegram.WebApp;
@@ -103,10 +102,10 @@ function SendResult()
       body: formData,
     });
     console.log(await response.json());
-	} catch (e) {
-		console.error(e);
-	}
+  } catch (e) {
+    console.error(e);
+  }
+};
 	
 }
-	
-}
+

@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-    <div id="unity-container" style="position: absolute; width: 100%; height: 100%; left: 0%; top: 0%;"> 
-      <canvas id="unity-canvas" style="position: absolute; width: 100%; height: 100%"></canvas>
+    <div id="unity-container" style="position: absolute; width: 100%; height: 90%; left: 0%; top: 0%;"> 
+      <canvas id="unity-canvas" style="position: absolute; width: 100%; height: 90%"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -17,12 +17,7 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      //<div id="unity-footer">
-        //<div id="unity-logo-title-footer"></div>
-        //<div id="unity-fullscreen-button"></div>
-        //<div id="unity-build-title">WebGlMiniApp</div>
-      //</div>
-		<div>
+		<div style="position: absolute; width: 100%; height: 90%; left: 50%; top: 100%;"> 
 			<button id="Send">Cохранить Результат</button>
 			<button id="Get">Топ-10</button>
 			<button id="Store">Оплатить Stars</button>
@@ -106,7 +101,7 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
         canvas.style.width = "100%";
-        canvas.style.height = "100%";
+        canvas.style.height = "90%";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";

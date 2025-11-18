@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.Telegram?.WebApp) {
     const tg = window.Telegram.WebApp;
 	document.getElementById("Send").addEventListener("click", SendResult, false);
+	document.getElementById("Get").addEventListener("click", ShowTopTen, false);
+	document.getElementById("Store").addEventListener("click", BuyStars, false);
     // Check API version support
     if (!tg.isVersionAtLeast("8.0")) {
       console.error("Home Screen Shortcut API is not supported on this device.");
@@ -107,9 +109,37 @@ async function SendResult() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        const result = await response.json(); // Or response.text() depending on server response
+        const result = await response.text();
         console.log('Success:', result);
     } catch (error) {
         console.error('Error:', error);
     }
+}
+
+async function ShowTopTen() {
+	console.log ("getting result");
+	
+	const formData = new FormData();
+
+
+    try {
+        const response = await fetch('https://telegramwebglbackend-production.up.railway.app/api/top', { 
+            method: 'GET',
+            body: formData, 
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.text();
+		alert(result);
+        console.log('Success:', result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+function BuyStars() {
+	alert("оплата-заглушка");
 }

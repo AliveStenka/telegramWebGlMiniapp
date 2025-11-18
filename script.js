@@ -1,5 +1,6 @@
 // Wait for the DOM to fully load before executing the script
 console.log("script started");
+var scoreValue = 0;
 document.addEventListener("DOMContentLoaded", () => {
   // Get references to DOM elements where data will be displayed
   const startAppElement = document.getElementById("startapp-param");
@@ -93,7 +94,7 @@ async function SendResult() {
 	console.log ("sending result");
 	const tg = window.Telegram.WebApp;
 	var telegram_id = tg.initDataUnsafe.user.id;
-	var score = 0;
+	var score = scoreValue;
 	
 	const formData = new FormData();
 	formData.append("telegram_id", telegram_id);
@@ -141,4 +142,10 @@ async function ShowTopTen() {
 
 function BuyStars() {
 	alert("оплата-заглушка");
+}
+
+function SetScoreValue(number)
+{
+	scoreValue = number;
+	console.log(scoreValue);
 }

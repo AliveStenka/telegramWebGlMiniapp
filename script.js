@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Mark the Mini App as ready
     tg.ready();
+  }
 });
 
 async function SendResult() {

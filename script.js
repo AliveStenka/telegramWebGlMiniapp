@@ -124,8 +124,7 @@ async function ShowTopTen() {
 
     try {
         const response = await fetch('https://telegramwebglbackend-production.up.railway.app/api/top', { 
-            method: 'GET',
-            body: formData, 
+            method: 'GET', 
         });
 
         if (!response.ok) {
@@ -133,7 +132,7 @@ async function ShowTopTen() {
         }
 
         const result = await response.text();
-		alert(result);
+		alert("WebGl приложение", result);
         console.log('Success:', result);
     } catch (error) {
         console.error('Error:', error);
@@ -141,5 +140,5 @@ async function ShowTopTen() {
 }
 
 function BuyStars() {
-	alert("оплата-заглушка");
+	alert("WebGl приложение" , "оплата-заглушка");
 }

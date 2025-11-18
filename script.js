@@ -132,7 +132,7 @@ async function ShowTopTen() {
         }
 
         const result = await response.text();
-		alert("WebGl приложение", result);
+		alert("Топ:10: " + result);
         console.log('Success:', result);
     } catch (error) {
         console.error('Error:', error);
@@ -140,5 +140,5 @@ async function ShowTopTen() {
 }
 
 function BuyStars() {
-	alert("WebGl приложение" , "оплата-заглушка");
+	alert("оплата-заглушка");
 }
